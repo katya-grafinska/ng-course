@@ -5,13 +5,6 @@ angular.module('myApp')
 
 function listItemDirective() {
   return {
-    scope: {
-      title: '=',
-      description: '='
-    },
-    templateUrl: 'templates/list-item.html',
-    link: function($scope) {
-      console.log("SCOPE>?", $scope);
-    }
+    templateUrl: 'templates/list-item.html'
   }
 }

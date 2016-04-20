@@ -1,7 +1,11 @@
 <div class="list">
+	<input type="text" placeholder="Search" ng-model="search" class="search_field">
+
+	<p ng-show="search.length">Знайдено: {{finded.length}} з {{items.length}} </p>
+
     <ul>
-        <li ng-repeat="item in items">
-            <list-item title="item.title" description="item.description"></list-item>
+        <li ng-repeat="item in items | filter:search as finded">
+            <list-item></list-item>
         </li>
     </ul>
 </div>

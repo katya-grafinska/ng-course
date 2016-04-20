@@ -5,9 +5,6 @@ angular.module('myApp')
 
 function listDirective() {
   return {
-    templateUrl: 'templates/list.html',
-    scope: {
-      items: '='
-    }
+    templateUrl: 'templates/list.html'
   }
 }

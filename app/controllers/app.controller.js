@@ -1,25 +1,11 @@
 'use strict';
-
 angular.module('myApp')
-  .controller('AppCtrl', AppController);
-
-function AppController($scope) {
-
-  $scope.data = { };
-
-  $scope.items = [
-    {
-      title: 'Item #1',
-      description: 'Item description #1'
-    },
-    {
-      title: 'Item #2',
-      description: 'Item description #2'
-    }
-  ];
-
-  $scope.addItem = function(newItem) {
-    var copy = angular.copy(newItem);
-    $scope.items.push(copy);
-  }
-}
+  .controller('AppCtrl', function ($scope, TodoService) {    
+    $scope.items = TodoService.getItems();
+    $scope.addItem = function(data) {
+      TodoService.addItem(data);
+    };
+    $scope.deleteItem = function(removeItem) {
+      TodoService.deleteItem(removeItem);
+    };
+});
